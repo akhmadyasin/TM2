@@ -4,7 +4,7 @@ public class tm2 {
     public static void main(String[] args) {
         ArrayList<Integer> fibonacciNumbers = new ArrayList<>();
         ArrayList<Integer> genap = new ArrayList<>();
-        int sum = 0;
+        int jumlah = 0;
 
         int a = 0;
         int b = 1;
@@ -15,7 +15,7 @@ public class tm2 {
                 fibonacciNumbers.add(fibonacci);
                 if (fibonacci % 2 == 0) {
                     genap.add(fibonacci);
-                    sum += fibonacci;
+                    jumlah += fibonacci;
                 }
             }
             a = b;
@@ -29,7 +29,7 @@ public class tm2 {
         }
         System.out.println();
 
-        System.out.println("Jumlah bilangan Fibonacci genap: " + genap.size());
-        System.out.println("Total bilangan Fibonacci genap: " + sum);
+        System.out.println("Total Array : " + genap.size());
+        System.out.println("Jumlah bilangan Fibonacci genap: " + jumlah);
     }
 }
