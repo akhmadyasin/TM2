@@ -14,7 +14,7 @@ public class tm2 {
             List<Integer> Fibonacci = filterNumbers(deretFibonacci);
 
             // Menampilkan deret bilangan Fibonacci genap
-            System.out.println("Deret bilangan Fibonacci yang genap:");
+            System.out.println("Deret bilangan Fibonacci genap:");
             for (int num : Fibonacci) {
                 System.out.print(num + " ");
             }
@@ -23,7 +23,7 @@ public class tm2 {
             int totalSum = TotalSum(Fibonacci);
 
             // Menampilkan total jumlah bilangan Fibonacci genap
-            System.out.println("\nTotal bilangan Fibonacci yang genap: " + totalSum);
+            System.out.println("\nTotal bilangan Fibonacci genap: " + totalSum);
         }
 
         // Menghasilkan deret Fibonacci hingga mencapai batas n
