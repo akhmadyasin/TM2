@@ -1,57 +1,35 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class tm2 {
+    public static void main(String[] args) {
+        ArrayList<Integer> fibonacciNumbers = new ArrayList<>();
+        ArrayList<Integer> genap = new ArrayList<>();
+        int sum = 0;
 
-        public static void main(String[] args) {
-            int start = 10;
-            int end = 4500;
+        int a = 0;
+        int b = 1;
+        int fibonacci = a + b;
 
-            List<Integer> deretFibonacci = generateDeretFibonacci(end);
-
-            List<Integer> Fibonacci = filterNumbers(deretFibonacci);
-
-            System.out.println("Deret bilangan Fibonacci genap:");
-            for (int num : Fibonacci) {
-                System.out.print(num + " ");
-            }
-
-            int totalSum = TotalSum(Fibonacci);
-
-            System.out.println("\nTotal bilangan Fibonacci genap: " + totalSum);
-        }
-
-        public static List<Integer> generateDeretFibonacci(int n) {
-            List<Integer> deretFibonacci = new ArrayList<>();
-            deretFibonacci.add(0);
-            deretFibonacci.add(1);
-
-            while (deretFibonacci.get(deretFibonacci.size() - 1) < n) {
-                int nextNum = deretFibonacci.get(deretFibonacci.size() - 1) +
-                        deretFibonacci.get(deretFibonacci.size() - 2);
-                deretFibonacci.add(nextNum);
-            }
-
-            return deretFibonacci;
-        }
-
-        public static List<Integer> filterNumbers(List<Integer> deret) {
-            ArrayList<Integer> Numbers = new ArrayList<>();
-            for (int num : deret) {
-                if (num % 2 == 0) {
-                    Numbers.add(num);
+        while (fibonacci <= 4500) {
+            if (fibonacci >= 10) {
+                fibonacciNumbers.add(fibonacci);
+                if (fibonacci % 2 == 0) {
+                    genap.add(fibonacci);
+                    sum += fibonacci;
                 }
             }
-            return Numbers;
+            a = b;
+            b = fibonacci;
+            fibonacci = a + b;
         }
 
-        public static int TotalSum(List<Integer> numbers) {
-            int sum = 0;
-            for (int num : numbers) {
-                sum += num;
-            }
-            return sum;
+        System.out.println("Deretan bilangan Fibonacci genap:");
+        for (int number : genap) {
+            System.out.print(number + " ");
         }
+        System.out.println();
 
-
+        System.out.println("Jumlah bilangan Fibonacci genap: " + genap.size());
+        System.out.println("Total bilangan Fibonacci genap: " + sum);
+    }
 }
